@@ -1,0 +1,31 @@
+<p>Clayout TWO Start</p>
+
+	<div class="row-colrow row-wrap">
+					<img {{bind-attr src=imgOne}} >
+		<div class="part-1 pitch">
+			<div class="comic-box fill">
+			<p><img {{bind-attr src=cmodel.firstObject.imageUrl}} ></p>	
+			</div>
+		</div>
+	</div>
+
+	<div class="row-colrow row-wrap">
+		{{#each cmodel as |cimage|}}
+		<div class="part-1 pitch">
+		
+			<div class="comic-box fill">
+				<img {{bind-attr src=cimage.imageUrl}} alt="Logo">
+			</div>
+
+		</div>
+		{{/each}}	
+	</div>
+	<div class="row-colrow row-wrap">
+		<div class="part-1 pitch">
+			<div class="comic-box fill">
+			<p><img {{bind-attr src=cmodel.lastObject.imageUrl}} ></p>	
+			</div>
+		</div>
+	</div>
+	
+<p>Clayout TWO End</p>

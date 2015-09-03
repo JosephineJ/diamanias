@@ -1,0 +1,26 @@
+/* Basic CSS File */
+/* ----------------------- */
+/* ----------------------- */
+
+/* Reset CSS */
+@import 'partials/normalize';
+
+/*General SASS Mixins and global variables */
+@import 'partials/base';
+
+/*Theme variables */
+@import 'partials/dtheme';
+
+/*Mixins and Keyframes for animations */
+@import 'partials/animations';
+
+
+
+/* Main Elements */
+@import 'partials/containers';
+
+/* Typography  */
+@import 'partials/typography';
+
+/* Patterns */
+@import 'partials/patterns';

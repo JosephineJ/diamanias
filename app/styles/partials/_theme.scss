@@ -1,0 +1,43 @@
+/* Theme Regular - Look and Feel Definitions */
+/*--------------------------*/
+/*--------------------------*/
+/*
+----------------------------
+C1. Colors
+- C1a. Fonts
+- C1b. Backgrounds
+- C1c. Popular Elements
+- C1d. Opacities
+C2. Mixins
+C3. Font-Sizes and Text Elements
+
+*/
+
+/* C1a. Fonts */
+$color-1: #444444;
+$light-1: #aaaaaa;
+$light-2: #dddddd;
+$light-3: #f9f9f9;
+$dark-1: #222222;
+$dark-2: #111111;
+$dark-3: #111111;
+$color-2: #dd0033;
+$color-3: #ffffff;
+
+/* C1b. Backgrounds */
+$bg-color-1: #ffffff;
+$bg-color-2: #111111;
+$bg-color-3: #dd0033;
+$bg-color-4: #00ddaa;
+
+/* C1c. Popular Elements */
+$linkblue: #3311e9;
+$transpa: transparent;
+$visited: #551A8B; 
+
+/* C1d. Opacities */
+$glass: transparent;
+$mist: rgba(255,255,255,0.2);
+$veil: rgba(255,255,255,0.5);
+$milk: rgba(255,255,255,0.8);
+$cotton: rgba(255,255,255,0.92);

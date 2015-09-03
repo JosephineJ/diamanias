@@ -1,0 +1,54 @@
+/*Animations*/
+@keyframes fade-in {
+	0%{
+		opacity: 0; }	
+	50% {
+		opacity: 1;	}	
+	100%{
+		opacity:0;}
+}
+@keyframes ghost-fade{
+	0%{
+		opacity: 0; }	
+	50% {
+		margin-top: -4%;
+		opacity: 0.3;	}	
+		
+	100%{
+		margin-top: 0;
+		opacity:1;}
+}
+@keyframes fade-in-2{
+	0%{
+		opacity: 0; }	
+	10% {
+		opacity: 1;	}
+	30%{
+		opacity: 0.8;}
+	40%	{
+		opacity: 0.6;}
+	60%{
+		opacity:0;}
+}
+
+@include keyframes(blink){
+	0%{
+		border-left-color: transparent; }	
+	20% {
+		border-left-color: $light-1;	}	
+	40%{
+		border-left-color: $light-1;	}
+	0%{
+		border-left-color:transparent;}
+}
+@keyframes typing {
+    from { width: 50% }
+    to { width:0 }
+}
+@include keyframes(blobtogether){
+	0%{
+		margin-left: 0;}
+	100%{
+		margin-left: 42px;}
+
+}
