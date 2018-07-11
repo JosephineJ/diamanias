@@ -1,26 +1,12 @@
-/* Basic CSS File */
-/* ----------------------- */
-/* ----------------------- */
+// Define desired color palettes.
+$primary: "indigo";
+$accent: "amber";
+$warn: "pink";
 
-/* Reset CSS */
-@import 'partials/normalize';
+// If desired, import the palettes and modify to your liking.
+@import "color-palette";
+$color-teal: map-merge($color-teal, ('contrastDefaultColor':  $light-contrast-color));
+$color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $light-contrast-color));
 
-/*General SASS Mixins and global variables */
-@import 'partials/base';
-
-/*Theme variables */
-@import 'partials/dtheme';
-
-/*Mixins and Keyframes for animations */
-@import 'partials/animations';
-
-
-
-/* Main Elements */
-@import 'partials/containers';
-
-/* Typography  */
-@import 'partials/typography';
-
-/* Patterns */
-@import 'partials/patterns';
+// Import the rest of ember-paper.
+@import "ember-paper";

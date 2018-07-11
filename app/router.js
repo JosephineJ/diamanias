@@ -1,17 +1,12 @@
-import Ember from 'ember';
+import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
 
-var Router = Ember.Router.extend({
-  location: config.locationType
+const Router = EmberRouter.extend({
+  location: config.locationType,
+  rootURL: config.rootURL
 });
 
 Router.map(function() {
-  this.resource('comic', function(){
-         this.resource('comicpage',{path: '/page/:comicpage_id'});
-    });
-  //this.route('comicpage');
-  //this.route('comicpage');
-  this.route('about');
 });
 
 export default Router;
