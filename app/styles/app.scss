@@ -10,3 +10,36 @@ $color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $lig
 
 // Import the rest of ember-paper.
 @import "ember-paper";
+
+body {
+  background: color('grey', '900');
+}
+
+md-toolbar.main-toolbar.md-default-theme {
+  background-color: color($primary, '900');
+}
+
+.main-nav {
+  font-family: 'CaveStoryRegular';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.8em;
+  background-color: transparent;
+  box-shadow: none;
+
+  md-content {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .nav-items {
+    padding: 0;
+  }
+
+  .nav-item {
+    margin: 1em 0;
+    padding: .5em 1em;
+    color: contrastColor($primary, 'A200');
+    background: linear-gradient(0.4turn, color($primary, '900'), color($primary, '800'), rgba(48, 79, 254, 0.2));
+  }
+}

@@ -1,4 +1,4 @@
-{{#paper-toolbar}}
+{{#paper-toolbar class="main-toolbar"}}
   {{#paper-toolbar-tools}}
   {{#paper-sidenav-toggle name="left" as |toggleAction|}}
     {{#paper-button iconButton=true onClick=(action toggleAction) data-test-home-menu=true}}
@@ -16,7 +16,7 @@
 {{/paper-toolbar}}
 
 {{#paper-sidenav
-  class="md-whiteframe-z2"
+  class="md-whiteframe-z2 main-nav"
   name="left"
   position="left"
   open=leftSideBarOpen
@@ -26,8 +26,9 @@
     {{#paper-toolbar-tools data-test-main-navigation-open=leftSideBarOpen}}Content{{/paper-toolbar-tools}}
   {{/paper-toolbar}}
   {{#paper-content padding=true}}
-    <ul>
-      <li data-test-chapter="1">Chapter One</li>
+    <ul class="nav-items">
+      <li class="nav-item" data-test-chapter="1">Chapter One</li>
+      <li class="nav-item" data-test-chapter="1">Chapter Two</li>
     </ul>
   {{/paper-content}}
 {{/paper-sidenav}}
