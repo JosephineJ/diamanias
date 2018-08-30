@@ -11,12 +11,24 @@ $color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $lig
 // Import the rest of ember-paper.
 @import "ember-paper";
 
+/* I. General */
 body {
   background: color('grey', '900');
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 md-toolbar.main-toolbar.md-default-theme {
   background-color: color($primary, '900');
+}
+
+md-sidenav {
+  md-toolbar.md-default-theme.sidenav-header {
+    background-color: transparent;
+  }
 }
 
 .main-nav {
@@ -34,12 +46,25 @@ md-toolbar.main-toolbar.md-default-theme {
 
   .nav-items {
     padding: 0;
+    margin: .5em 0;
   }
 
   .nav-item {
-    margin: 1em 0;
-    padding: .5em 1em;
+    cursor: pointer;
+    margin: .5em 0;
     color: contrastColor($primary, 'A200');
     background: linear-gradient(0.4turn, color($primary, '900'), color($primary, '800'), rgba(48, 79, 254, 0.2));
+    opacity: .7;
+    transition: opacity .3s ease-in;
+
+    &:hover {
+      background: linear-gradient(0.3turn, color($primary, '700'), color($primary, '800'), color('purple', '900'));
+      opacity: 1;
+    }
+
+    a {
+      display: block;
+      padding: .5em 1em;
+    }
   }
 }

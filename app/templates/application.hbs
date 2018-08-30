@@ -22,13 +22,14 @@
   open=leftSideBarOpen
   lockedOpen=false
   onToggle=(action (mut leftSideBarOpen))}}
-  {{#paper-toolbar as |toolbar|}}
-    {{#paper-toolbar-tools data-test-main-navigation-open=leftSideBarOpen}}Content{{/paper-toolbar-tools}}
+  {{#paper-toolbar class="sidenav-header" as |toolbar|}}
+    {{#paper-toolbar-tools data-test-main-navigation-open=leftSideBarOpen}}{{/paper-toolbar-tools}}
   {{/paper-toolbar}}
   {{#paper-content padding=true}}
     <ul class="nav-items">
-      <li class="nav-item" data-test-chapter="1">Chapter One</li>
-      <li class="nav-item" data-test-chapter="1">Chapter Two</li>
+      {{#each model as |chapter|}}
+        <li class="nav-item" data-test-chapter={{chapter.id}}>{{#link-to 'chapters.chapter' chapter.id}}{{chapter.name}}{{/link-to}}</li>
+      {{/each}}
     </ul>
   {{/paper-content}}
 {{/paper-sidenav}}
