@@ -1,7 +1,7 @@
 .comic-panel__layer {
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  background-position: center 0;
   background-color: rgba(44,44,44,0.5);
   background-size: cover;
   position: absolute;
@@ -11,6 +11,7 @@
   right: 0;
   display: block;
 
+
   img {
     object-fit: cover;
     position: absolute;
@@ -19,8 +20,23 @@
     opacity: 0.3;
   }
 
-  &--at-sea {
-    background-size: 120% auto;
-    background-position: center center;
+  &--the-sea {
+    box-shadow: none;
+
+    @media only screen
+    and (min-width: 1400px) {
+      box-shadow: inset 0px 0px 40px 40px color('grey', '900'); /* change to alter the effect*/
+    }
+
+    @media only screen
+    and (min-width: 1500px) {
+      box-shadow: inset 0px 0px 100px 100px color('grey', '900'); /* change to alter the effect*/
+    }
+  }
+
+  @for $i from 1 through 12 {
+    &--f#{$i} {
+      background-size: auto (100% * $i);
+    }
   }
 }

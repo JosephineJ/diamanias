@@ -7,4 +7,7 @@ export default Component.extend({
   kind: reads('panel.kind'),
   isLarge: equal('kind', 'l'),
   isExtraLarge: equal('kind', 'xl'),
+  init() {
+    this._super(...arguments);  
+  },
 });
