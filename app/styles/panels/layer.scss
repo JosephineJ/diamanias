@@ -1,0 +1,26 @@
+.comic-panel__layer {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-color: rgba(44,44,44,0.5);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+
+  img {
+    object-fit: cover;
+    position: absolute;
+    left: -25%;
+    top: -25%;
+    opacity: 0.3;
+  }
+
+  &--at-sea {
+    background-size: 120% auto;
+    background-position: center center;
+  }
+}

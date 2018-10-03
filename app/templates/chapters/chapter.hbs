@@ -1,4 +1,8 @@
-more......
-
-Chapter {{model.id}}
+<h1>Chapter {{model.chapter.id}}</h1>
+<h2>{{model.chapter.name}}</h2>
+<section class="comic-strip">
+  {{#each model.panels as |panel|}}
+    {{comic-panel panel=panel}}
+  {{/each}}
+</section>
 {{outlet}}

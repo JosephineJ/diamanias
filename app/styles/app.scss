@@ -68,3 +68,27 @@ md-sidenav {
     }
   }
 }
+
+.container {
+  width: 80%;
+  margin: 2em auto;
+
+  @media only screen
+  and (max-device-width: 900px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100%;
+  }
+}
+
+.comic-strip {
+  display: grid;
+  grid-gap: 1em;
+  /* grid-template-columns: repeat(auto-fill, minmax(300px)); */
+  grid-template-columns: repeat(auto-fill, minmax(max-content));
+  grid-template-rows: 300px 300px 300px;
+  grid-auto-rows: 300px;
+  grid-auto-flow: dense;
+}
+
+@import 'panels/panel';
+@import 'panels/layer';

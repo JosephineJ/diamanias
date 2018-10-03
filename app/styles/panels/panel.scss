@@ -1,0 +1,40 @@
+.comic-panel {
+  overflow: hidden;
+  border: 4px solid color($primary, '900');
+  position: relative;
+  grid-column: span 1;
+  grid-row: span 1;
+
+  @media only screen
+  and (max-device-width: 600px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    grid-column: span 3;
+  }
+
+  @media only screen
+  and (min-device-width: 601px)
+  and (max-device-width: 900px) {
+    grid-column: span 2;
+  }
+
+  &--large {
+    grid-column: span 2;
+
+    @media only screen
+    and (max-device-width: 600px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      grid-column: span 3;
+    }
+  }
+
+  &--extra-large {
+    grid-column: span 3;
+    grid-row: span 2;
+
+    @media only screen
+    and (max-device-width: 600px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      grid-row: span 3;
+    }
+  }
+}
