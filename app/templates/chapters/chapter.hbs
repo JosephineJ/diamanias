@@ -1,5 +1,4 @@
-<h1>Chapter {{model.chapter.id}}</h1>
-<h2>{{model.chapter.name}}</h2>
+<h2 class="light">{{model.chapter.name}}</h2>
 <section class="comic-strip">
   {{#each model.panels as |panel|}}
     {{comic-panel panel=panel}}

@@ -2,6 +2,7 @@
 $primary: "indigo";
 $accent: "amber";
 $warn: "pink";
+$white: "white";
 
 // If desired, import the palettes and modify to your liking.
 @import "color-palette";
@@ -88,6 +89,10 @@ md-sidenav {
   grid-template-rows: 300px 300px 300px;
   grid-auto-rows: 300px;
   grid-auto-flow: dense;
+}
+
+.light {
+  color: color($accent, '200');
 }
 
 @import 'panels/panel';

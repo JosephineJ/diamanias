@@ -3,7 +3,7 @@
   background-attachment: scroll;
   background-position: center 0;
   background-color: rgba(44,44,44,0.5);
-  background-size: cover;
+  background-size: 100% auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -20,18 +20,8 @@
     opacity: 0.3;
   }
 
-  &--the-sea {
-    box-shadow: none;
-
-    @media only screen
-    and (min-width: 1400px) {
-      box-shadow: inset 0px 0px 40px 40px color('grey', '900'); /* change to alter the effect*/
-    }
-
-    @media only screen
-    and (min-width: 1500px) {
-      box-shadow: inset 0px 0px 100px 100px color('grey', '900'); /* change to alter the effect*/
-    }
+  &--brighten {
+    animation: brightenUp 5s 1;
   }
 
   @for $i from 1 through 12 {
@@ -39,4 +29,9 @@
       background-size: auto (100% * $i);
     }
   }
+}
+
+@keyframes brightenUp {
+  0%   { filter: brightness(0.2) saturate(30%); }
+  100% { filter: brightness(1) saturate(100%); }
 }
