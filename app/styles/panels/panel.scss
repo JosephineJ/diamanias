@@ -25,6 +25,20 @@
     and (-webkit-min-device-pixel-ratio: 2) {
       grid-column: span 3;
     }
+
+    .comic-panel__layer {
+      box-shadow: none;
+
+      @media only screen
+      and (min-width: 1400px) {
+        box-shadow: inset 0px 0px 20px 20px color('grey', '900'); /* change to alter the effect*/
+      }
+
+      @media only screen
+      and (min-width: 1500px) {
+        box-shadow: inset 0px 0px 50px 50px color('grey', '900'); /* change to alter the effect*/
+      }
+    }
   }
 
   &--extra-large {

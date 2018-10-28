@@ -3,7 +3,7 @@ import { computed } from '@ember/object';
 
 export default FPanelLayerComponent.extend({
   iterations: 1,
-  durationFactor: 2000,
+  durationFactor: 400,
   numOfSteps: computed('maxFrames', function() {
     return this.get('maxFrames') - 1;
   }),
