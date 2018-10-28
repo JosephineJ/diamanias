@@ -45,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/diamanias';
+    ENV.rootURL = 'https://jessica-jordan.github.io/diamanias';
     ENV.locationType = 'hash';
     ENV.API_HOST = 'https://guarded-dawn-75805.herokuapp.com';
   }
