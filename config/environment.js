@@ -47,7 +47,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.rootURL = '/diamanias';
     ENV.locationType = 'hash';
-    ENV.API_HOST = 'somethingelse';
+    ENV.API_HOST = 'https://guarded-dawn-75805.herokuapp.com';
   }
 
   return ENV;
