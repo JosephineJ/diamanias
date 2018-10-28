@@ -7,7 +7,6 @@ module.exports = function(defaults) {
     // Add options here
     fingerprint: {
       exclude: ['jpg', 'png', 'gif', 'svg'],
-      prepend: 'diamanias'
     },
   });
 
