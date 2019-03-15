@@ -7,4 +7,6 @@ export default DS.Model.extend({
   panel: DS.belongsTo('panel'),
   layerKind: DS.attr('string'),
   numOfFrames: DS.attr('number'),
+  text: DS.attr('string'),
+  size: DS.attr(),
 });

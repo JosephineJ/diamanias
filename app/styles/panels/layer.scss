@@ -29,6 +29,46 @@
       background-size: auto (100% * $i);
     }
   }
+
+  &--text {
+    background-color: transparent;
+    font-size: $fs-medium;
+    display: flex;
+    align-items: center;
+
+    &.right {
+      justify-content: flex-end;
+    }
+
+    &.left {
+      justify-content: flex-start;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+
+    &.vbottom {
+      align-items: flex-end;
+    }
+
+   &-small {
+     font-size: $fs-small;
+   }
+
+   &-large {
+     font-size: $fs-large;
+   }
+
+    &.emotive {
+      p {
+        transform: skewX(10deg) rotate(-10deg);
+        &::first-letter {
+          font-size: $fs-large;
+        }
+      }
+    }
+  }
 }
 
 @keyframes brightenUp {

@@ -9,7 +9,7 @@ import config from 'diamanias/config/environment';
 export default Component.extend({
   // layer: null,
   classNames: ['comic-panel__layer'],
-  classNameBindings: ['styleClass', 'frameClass'],
+  classNameBindings: ['styleClass', 'frameClass', 'kindClass'],
   attributeBindings: ['style'],
   layout: layout,
   bgImg: reads('layer.bgImg'),
@@ -17,8 +17,10 @@ export default Component.extend({
   bgImgTag: htmlSafe(tag`background-image: url(${raw(config.rootURL)}${'bgImg'});`),
   styleClass: reads('layer.styleClass'),
   frameClass: tag`comic-panel__layer--f${'maxFrames'}`,
+  kindClass: tag`comic-panel__layer--${'kind'}`,
   maxFrames: reads('layer.numOfFrames'),
   bgImgSize: null,
   isForward: equal('kind', 'forward'),
+  isText: equal('kind', 'text'),
   kind: reads('layer.layerKind'),
 });
