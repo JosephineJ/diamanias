@@ -7,7 +7,10 @@ import { inject } from '@ember/service';
 
 export default Component.extend(InViewportMixin, {
   classNames: ['comic-panel'],
-  classNameBindings: ['isLarge:comic-panel--large', 'isExtraLarge:comic-panel--extra-large'],
+  classNameBindings: ['isLarge:comic-panel--large', 'isExtraLarge:comic-panel--extra-large', 'inView:comic-panel--active'],
+
+  inView: false,
+
   kind: reads('panel.kind'),
   isLarge: equal('kind', 'l'),
   isExtraLarge: equal('kind', 'xl'),
@@ -20,10 +23,13 @@ export default Component.extend(InViewportMixin, {
   didEnterViewport() {
     console.log("enter view");
     this.playGroupEffect();
+    this.set('inView', true);
+    console.log({ eenterd: this.get('viewportEntered') });
   },
   didExitViewport() {
     console.log("exit view");
     this.pauseGroupEffect();
+    this.set('inView', false);
   },
   didScroll(direction) {
     console.log(direction); // 'up' || 'down' || 'left' || 'right'

@@ -35,6 +35,7 @@
     font-size: $fs-medium;
     display: flex;
     align-items: center;
+    opacity: 0;
 
     &.right {
       justify-content: flex-end;
@@ -58,6 +59,47 @@
 
    &-large {
      font-size: $fs-large;
+   }
+
+   &-bubble {
+     p {
+       background-color: #fff;
+       padding: 4em 2em;
+       border-radius: 55% 60% 50% 50% / 60% 60% 40% 40%;
+       border: 2px solid color('grey', '900');
+       color: color('grey', '900');
+       font-size: $fs-medium;
+       position: absolute;
+     }
+   }
+
+
+   &.ur {
+     p {
+       top: -.5em;
+       right: -.5em;
+     }
+   }
+
+   &.br {
+     p {
+       bottom: -.5em;
+       right: -.5em;
+     }
+   }
+
+   &.ul {
+     p {
+       top: -.5em;
+       left: -.5em;
+     }
+   }
+
+   &.ub {
+     p {
+       bottom: -.5em;
+       left: -.5em;
+     }
    }
 
     &.emotive {
