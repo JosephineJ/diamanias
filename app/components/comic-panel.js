@@ -8,12 +8,16 @@ import { inject } from '@ember/service';
 export default Component.extend(InViewportMixin, {
   classNames: ['comic-panel'],
   classNameBindings: ['isLarge:comic-panel--large', 'isExtraLarge:comic-panel--extra-large', 'inView:comic-panel--active'],
+  attributeBindings: ['tabIndex:tabindex'],
 
   inView: false,
+  tabIndex: 0,
+  role: 'img',
 
   kind: reads('panel.kind'),
   isLarge: equal('kind', 'l'),
   isExtraLarge: equal('kind', 'xl'),
+  description: reads('panel.description'),
   animation: inject(),
   init() {
     this._super(...arguments);

@@ -39,18 +39,30 @@
 
     &.right {
       justify-content: flex-end;
+      padding-right: 1em;
     }
 
     &.left {
       justify-content: flex-start;
+      padding-left: 1em;
     }
 
     &.center {
       justify-content: center;
     }
 
-    &.vbottom {
+    &.vcenter {
+      align-items: center;
+    }
+
+    &.bottom {
       align-items: flex-end;
+      padding-bottom: 1em;
+    }
+
+    &.up {
+      align-items: flex-start;
+      padding-top: 1em;
     }
 
    &-small {
@@ -95,7 +107,7 @@
      }
    }
 
-   &.ub {
+   &.bl {
      p {
        bottom: -.5em;
        left: -.5em;
