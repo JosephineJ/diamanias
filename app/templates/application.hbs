@@ -1,12 +1,12 @@
-{{#paper-toolbar class="main-toolbar"}}
+{{#paper-toolbar class="main-toolbar transparent text-white"}}
   {{#paper-toolbar-tools}}
   {{#paper-sidenav-toggle name="left" as |toggleAction|}}
     {{#paper-button iconButton=true onClick=(action toggleAction) data-test-home-menu=true}}
       {{paper-icon "menu"}}
     {{/paper-button}}
   {{/paper-sidenav-toggle}}
-    <h2>
-      D
+    <h2 class="text-white">
+      {{#link-to 'index'}}Diamanias{{/link-to}}
     </h2>
     <span class="flex"></span>
     {{#paper-button iconButton=true}}
@@ -34,6 +34,8 @@
   {{/paper-content}}
 {{/paper-sidenav}}
 
-<div class="container">
-  {{outlet}}
-</div>
+{{outlet}}
+
+<footer class="md-default-theme text-white text-right">
+ <p class="text-white">(c) 2019 JJ</p>
+</footer>

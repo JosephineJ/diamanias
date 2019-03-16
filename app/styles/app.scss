@@ -2,7 +2,8 @@
 $primary: "indigo";
 $accent: "amber";
 $warn: "pink";
-$white: "white";
+$white: white;
+$dark: #212121;
 
 // If desired, import the palettes and modify to your liking.
 @import "color-palette";
@@ -14,7 +15,7 @@ $color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $lig
 
 /* I. General */
 body {
-  background: color('grey', '900');
+  background-color: color('grey', '900');
 }
 
 a {
@@ -108,3 +109,96 @@ md-sidenav {
 @import 'vars';
 @import 'panels/panel';
 @import 'panels/layer';
+
+
+section {
+  padding: 4rem 2rem;
+}
+
+.hero-header {
+  height: 500px;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-color: color($primary, '900');
+  background-position: 0 0;
+  text-align: center;
+  padding: 4em;
+  margin: 0 auto;
+}
+
+.index__header {
+  background-image: url('/assets/img/bubbles-sprite.png');
+  background-size: 50% auto;
+}
+
+h1, .h1-title {
+  font-size: $fs-xtra-large;
+}
+
+h2, .h2-title {
+  font-size: $fs-large;
+}
+
+h3, .h3-title {
+  font-size: $fs-medium-large;
+}
+
+h4, p, a, span, li {
+  font-size: $fs-medium;
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+  color: color('grey', '900');
+}
+
+.centered {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+p {
+  a {
+    font-weight: bold;
+  }
+}
+
+a {
+  &:hover {
+    text-decoration: line-through;
+  }
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-light, .text-accent {
+  color: color($accent, '200');
+}
+
+.text-primary, .text-dark {
+  color: $dark;
+}
+
+md-toolbar.main-toolbar.md-default-theme.transparent {
+  background-color: transparent;
+}
+
+.md-button.large {
+  padding: .5em 2em;
+  font-size: $fs-medium-small;
+}
+
+md-backdrop.md-opaque {
+  opacity: .88;
+}
+
+footer {
+  min-height: 56px;
+  padding: .5em 2em;;
+  background-color: color($primary, '900');
+  text-align: right;
+}
