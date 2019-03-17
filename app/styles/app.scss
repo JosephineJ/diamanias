@@ -79,6 +79,7 @@ md-sidenav {
   and (max-device-width: 900px)
   and (-webkit-min-device-pixel-ratio: 2) {
     width: 100%;
+    margin: 1em auto;
   }
 }
 
@@ -90,15 +91,24 @@ md-sidenav {
   grid-auto-rows: 300px;
   align-content: space-around;
   justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
 
   @media only screen
   and (max-device-width: 600px) {
-    //grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   @media only screen
   and (max-device-width: 400px) {
-    //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  @media only screen
+  and (max-device-width: 900px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -175,7 +185,7 @@ a {
   color: $white;
 }
 
-.text-light, .text-accent {
+.text-light, .text-accent, .light p {
   color: color($accent, '200');
 }
 

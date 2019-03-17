@@ -14,12 +14,13 @@
   @media only screen
   and (min-device-width: 601px)
   and (max-device-width: 900px) {
-    grid-column: span 2;
+    grid-column: span 3;
   }
 
   &--large {
     grid-column: span 2;
     // height: 500px;
+    max-width: 900px;
 
     @media only screen
     and (max-device-width: 600px)
@@ -45,11 +46,12 @@
   &--extra-large {
     grid-column: span 3;
     grid-row: span 2;
+    max-width: 1200px;
 
     @media only screen
     and (max-device-width: 600px)
     and (-webkit-min-device-pixel-ratio: 2) {
-      grid-row: span 2;
+      grid-row: span 1;
       width: 100%;
     }
 
