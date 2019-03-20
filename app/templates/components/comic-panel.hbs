@@ -2,4 +2,3 @@
 {{#each panel.layers as |layer|}}
   {{component (concat "panel-layer-" layer.layerKind) layer=layer onSetup=(action "setupEffects")}}
 {{/each}}
-<h1 class="number">{{panel.id}}</h1>

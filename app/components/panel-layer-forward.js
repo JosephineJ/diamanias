@@ -4,7 +4,7 @@ import { reads } from '@ember/object/computed';
 
 export default PanelLayerComponent.extend({
   durationFactor: 400,
-  iterations: 999,
+  iterations: 99999,
   numOfSteps: reads('maxFrames'),
   backgroundPercentage: computed('maxFrames', function() {
     let num = this.get('maxFrames');

@@ -30,6 +30,7 @@
       {{#each model as |chapter|}}
         <li class="nav-item" data-test-chapter={{chapter.id}}>{{#link-to 'chapters.chapter' chapter.id}}{{chapter.name}}{{/link-to}}</li>
       {{/each}}
+      <li class="nav-item" data-test-nav-item="settings">{{#link-to 'settings'}}Settings{{/link-to}}</li>
     </ul>
   {{/paper-content}}
 {{/paper-sidenav}}

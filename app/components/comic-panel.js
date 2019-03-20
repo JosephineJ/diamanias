@@ -3,7 +3,7 @@
 import Component from '@ember/component';
 import { equal, reads } from '@ember/object/computed';
 import InViewportMixin from 'ember-in-viewport';
-import { inject } from '@ember/service';
+import { inject as service } from '@ember/service';
 
 export default Component.extend(InViewportMixin, {
   classNames: ['comic-panel'],
@@ -18,29 +18,30 @@ export default Component.extend(InViewportMixin, {
   isLarge: equal('kind', 'l'),
   isExtraLarge: equal('kind', 'xl'),
   description: reads('panel.description'),
-  animation: inject(),
+  animation: service(),
+  settings: service(),
   init() {
     this._super(...arguments);
     this.set('effects', []);
     this.setProperties({ intersectionThreshold: 0.75 });
   },
   didEnterViewport() {
-    console.log("enter view");
-    this.playGroupEffect();
+    if (this.get('settings.autoAnimationsEnabled')) {
+      this.playGroupEffect();
+    }
     this.set('inView', true);
-    console.log({ eenterd: this.get('viewportEntered') });
   },
   didExitViewport() {
-    console.log("exit view");
-    this.pauseGroupEffect();
+    if (this.get('settings.autoAnimationsEnabled')) {
+      this.pauseGroupEffect();
+    }
     this.set('inView', false);
   },
-  didScroll(direction) {
-    console.log(direction); // 'up' || 'down' || 'left' || 'right'
+  didScroll() {
+    // param: direction - 'up' || 'down' || 'left' || 'right'
   },
   didInsertElement() {
     this._super(...arguments);
-    let timeline = this.get('animation.timeline');
     this.set('groupEffect', new GroupEffect(this.get('effects')));
   },
   playGroupEffect() {

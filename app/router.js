@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('chapter', { path: '/:id' });
   });
   this.route('test');
+  this.route('settings');
 });
 
 export default Router;

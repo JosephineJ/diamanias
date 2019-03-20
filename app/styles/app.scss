@@ -18,6 +18,10 @@ body {
   background-color: color('grey', '900');
 }
 
+html, body, * {
+  box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -97,11 +101,17 @@ md-sidenav {
   @media only screen
   and (max-device-width: 600px) {
     // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 0;
+    justify-content: space-between;
   }
 
   @media only screen
   and (max-device-width: 400px) {
     // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 0;
+    justify-content: space-between;
+    align-items: space-between;
+    grid-row-gap: 10px;
   }
 
   @media only screen
@@ -109,6 +119,8 @@ md-sidenav {
   and (-webkit-min-device-pixel-ratio: 2) {
     width: 100%;
     padding: 0;
+    grid-gap: 0;
+    grid-row-gap: 10px;
   }
 }
 
@@ -183,6 +195,10 @@ a {
 
 .text-white {
   color: $white;
+
+  p, h1, h2, h3, span, a {
+    color: $white;
+  }
 }
 
 .text-light, .text-accent, .light p {
@@ -211,4 +227,8 @@ footer {
   padding: .5em 2em;;
   background-color: color($primary, '900');
   text-align: right;
+}
+
+.chapter-title {
+  padding: .5rem 1rem;
 }
