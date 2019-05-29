@@ -6,7 +6,8 @@
     <h2>Animation Autoplay</h2>
     <p>Do you want to view the comic using autoplay animations?</p>
     <p>
-      {{#paper-checkbox value=autoAnimationsEnabled onChange=(action (mut autoAnimationsEnabled))}} Autoplay animations are {{currentAnimationSetting}}{{/paper-checkbox}}
+      <label for="anima-ap">Autoplay animations are {{currentAnimationSetting}}</label>
+      {{input type="checkbox" checked=autoAnimationsEnabled enter=(action (mut autoAnimationsEnabled))  id="anima-ap" class="right"}}
     </p>
   </section>
   <section class="text-white">
