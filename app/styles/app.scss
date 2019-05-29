@@ -216,6 +216,7 @@ md-toolbar.main-toolbar.md-default-theme.transparent {
 .md-button.large {
   padding: .5em 2em;
   font-size: $fs-medium-small;
+  text-transform: none;
 }
 
 md-backdrop.md-opaque {

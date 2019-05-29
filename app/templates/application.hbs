@@ -1,9 +1,34 @@
+{{#paper-sidenav
+  class="md-whiteframe-z2 main-nav"
+  name="left"
+  position="left"
+  open=leftSideBarOpen
+  lockedOpen=false
+  onToggle=(action "toggleMenu" leftSideBarOpen)}}
+  {{#paper-toolbar class="sidenav-header" as |toolbar|}}
+    {{#paper-toolbar-tools data-test-main-navigation-open=leftSideBarOpen}}{{/paper-toolbar-tools}}
+  {{/paper-toolbar}}
+  {{#paper-content padding=true}}
+    <nav class="nav-items" id="initial-focusee" tabindex="0">
+      {{#each model as |chapter|}}
+        {{#link-to 'chapters.chapter' chapter.id class="nav-item" data-test-chapter=chapter.id}}{{chapter.name}}{{/link-to}}
+      {{/each}}
+      {{#link-to "settings" class="nav-item" data-test-nav-item="settings"}}Settings{{/link-to}}
+    </nav>
+  {{/paper-content}}
+{{/paper-sidenav}}
+
 {{#paper-toolbar class="main-toolbar transparent text-white"}}
   {{#paper-toolbar-tools}}
   {{#paper-sidenav-toggle name="left" as |toggleAction|}}
-    {{#paper-button iconButton=true onClick=(action toggleAction) data-test-home-menu=true}}
+    <PaperButton
+      @iconButton={{true}}
+      @onClick={{action toggleAction}}
+      role="button"
+      aria-label="Click here to enter main navigation"
+      data-test-home-menu={{true}}>
       {{paper-icon "menu"}}
-    {{/paper-button}}
+    </PaperButton>
   {{/paper-sidenav-toggle}}
     <h2 class="text-white">
       {{#link-to 'index'}}Diamanias{{/link-to}}
@@ -14,26 +39,6 @@
     {{/paper-button}}
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
-
-{{#paper-sidenav
-  class="md-whiteframe-z2 main-nav"
-  name="left"
-  position="left"
-  open=leftSideBarOpen
-  lockedOpen=false
-  onToggle=(action (mut leftSideBarOpen))}}
-  {{#paper-toolbar class="sidenav-header" as |toolbar|}}
-    {{#paper-toolbar-tools data-test-main-navigation-open=leftSideBarOpen}}{{/paper-toolbar-tools}}
-  {{/paper-toolbar}}
-  {{#paper-content padding=true}}
-    <ul class="nav-items">
-      {{#each model as |chapter|}}
-        <li class="nav-item" data-test-chapter={{chapter.id}}>{{#link-to 'chapters.chapter' chapter.id}}{{chapter.name}}{{/link-to}}</li>
-      {{/each}}
-      <li class="nav-item" data-test-nav-item="settings">{{#link-to 'settings'}}Settings{{/link-to}}</li>
-    </ul>
-  {{/paper-content}}
-{{/paper-sidenav}}
 
 {{outlet}}
 

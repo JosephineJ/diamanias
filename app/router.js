@@ -12,6 +12,7 @@ Router.map(function() {
   });
   this.route('test');
   this.route('settings');
+  this.route('a11y');
 });
 
 export default Router;
