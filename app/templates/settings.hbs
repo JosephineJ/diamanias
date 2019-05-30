@@ -7,7 +7,7 @@
     <p>Do you want to view the comic using autoplay animations?</p>
     <p>
       <label for="anima-ap">Autoplay animations are {{currentAnimationSetting}}</label>
-      {{input type="checkbox" checked=autoAnimationsEnabled enter=(action (mut autoAnimationsEnabled))  id="anima-ap" class="right"}}
+      {{input type="checkbox" checked=autoAnimationsEnabled change=(action "toggleSettings" "autoAnimationsEnabled")  id="anima-ap" class="right"}}
     </p>
   </section>
   <section class="text-white">
