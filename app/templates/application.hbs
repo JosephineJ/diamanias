@@ -9,7 +9,7 @@
     {{#paper-toolbar-tools data-test-main-navigation-open=leftSideBarOpen}}{{/paper-toolbar-tools}}
   {{/paper-toolbar}}
   {{#paper-content padding=true}}
-    <nav class="nav-items" id="initial-focusee" tabindex="0">
+    <nav class="nav-items" id="initial-focusee" tabindex="-1">
       {{#each model as |chapter|}}
         {{#link-to 'chapters.chapter' chapter.id class="nav-item" data-test-chapter=chapter.id}}{{chapter.name}}{{/link-to}}
       {{/each}}
@@ -40,8 +40,12 @@
   {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
 
-{{outlet}}
+<main>
+  {{outlet}}
+</main>
 
 <footer class="md-default-theme text-white text-right">
  <p class="text-white">(c) 2019 JJ</p>
 </footer>
+
+{{route-announcer}}

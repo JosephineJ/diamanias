@@ -20,6 +20,7 @@
   "devDependencies": {
     "@ember/jquery": "^0.5.2",
     "@ember/optional-features": "^0.6.3",
+    "a11y-announcer": "^1.0.4",
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.1.0",
     "ember-awesome-macros": "^3.0.0",
@@ -27,6 +28,7 @@
     "ember-cli-app-version": "^3.2.0",
     "ember-cli-babel": "^6.16.0",
     "ember-cli-dependency-checker": "^3.0.0",
+    "ember-cli-document-title": "^0.4.0",
     "ember-cli-eslint": "^4.2.3",
     "ember-cli-github-pages": "^0.2.0",
     "ember-cli-htmlbars": "^3.0.0",

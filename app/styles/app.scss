@@ -240,3 +240,31 @@ footer {
 .right {
   float: right;
 }
+
+.ember-checkbox {
+  width: .8em;
+  height: .8em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance:none;
+  outline: 3px solid color($accent);
+  box-shadow: none;
+  font-size: 1em;
+  position: relative;
+
+  &:checked {
+    background-color: color($accent);
+    outline-color: color($accent);
+
+    &:after {
+      opacity: 1;
+      height: 2em;
+      width: 2em;
+      content:  "\2713 ";
+      top: -3px;
+      left: 0;
+      position: absolute;
+    }
+  }
+}
