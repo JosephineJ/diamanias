@@ -11,8 +11,11 @@
     </p>
   </section>
   <section class="text-white">
-    <h2>Color Contrast (tbd)</h2>
-    <p>Adjust your color settings for improved contrast</p>
+    <h2>Color Contrast (feature in progress)</h2>
+    <p>
+      <label for="contrast-setter">High contrast color setting is {{currentColorSetting}}</label>
+      {{input type="checkbox" disabled=true checked=false change=(action "toggleSettings" "highContrastEnabled")  id="contast-setter" class="right"}}
+    </p>
   </section>
   {{outlet}}
 </div>

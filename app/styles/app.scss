@@ -16,6 +16,10 @@ $color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $lig
 /* I. General */
 body {
   background-color: color('grey', '900');
+
+  &.contrast {
+    background-color: color('indigo', '100');
+  }
 }
 
 html, body, * {
@@ -199,17 +203,33 @@ a {
 .text-white {
   color: $white;
 
+  .contrast & {
+    color: color('grey', '900');
+  }
+
   p, h1, h2, h3, span, a {
     color: $white;
+
+    .contrast & {
+      color: color('grey', '900');
+    }
   }
 }
 
 .text-light, .text-accent, .light p {
   color: color($accent, '200');
+
+  .contrast & {
+    color: color('grey', '900');
+  }
 }
 
 .text-primary, .text-dark {
   color: $dark;
+
+  .contrast & {
+    color: $white;
+  }
 }
 
 md-toolbar.main-toolbar.md-default-theme.transparent {
@@ -231,6 +251,10 @@ footer {
   padding: .5em 2em;;
   background-color: color($primary, '900');
   text-align: right;
+
+  .contrast & {
+    background-color: color('indigo', '300');
+  }
 }
 
 .chapter-title {
@@ -266,5 +290,12 @@ footer {
       left: 0;
       position: absolute;
     }
+  }
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar) md-icon, md-toolbar:not(.md-menu-toolbar) md-icon {
+  .contrast & {
+    color: color('grey', '900');
+    fill: color('grey', '900');
   }
 }

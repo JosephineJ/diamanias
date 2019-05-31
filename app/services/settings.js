@@ -6,24 +6,30 @@ export default Service.extend({
   cookies: service(),
 
   autoAnimationsEnabled: null,
+  highContrastEnabled: null,
 
   init() {
     this._super(...arguments);
     let autoplay = this.cookies.exists('autoAnimationsEnabled') ? this.cookies.read('autoAnimationsEnabled') : false;
-    console.log({ readValue: this.cookies.read('autoAnimationsEnabled') });
+    let highContrast = this.cookies.exists('highContrastEnabled') ? this.cookies.read('highContrastEnabled') : false;
+
     if (autoplay === 'no') {
       this.set('autoAnimationsEnabled', false);
     } else {
       this.set('autoAnimationsEnabled', true);
     }
+
+    if (highContrast === 'no') {
+      this.set('highContrastEnabled', false);
+    } else {
+      this.set('highContrastEnabled', true);
+    }
   },
 
   setSettings(setting, value) {
-    console.log({ value });
     this.set(setting, value);
     let cookieValue = value ? 'yes' : 'no';
-    console.log({ cookieValue });
-    this.cookies.write('autoAnimationsEnabled', cookieValue);
+    this.cookies.write(setting, cookieValue);
   },
 
   allCookies: computed(function() {

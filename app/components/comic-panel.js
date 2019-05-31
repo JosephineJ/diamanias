@@ -58,6 +58,13 @@ export default Component.extend(InViewportMixin, {
       currentAnimation.pause();
     }
   },
+  click() {
+    if (this.get('currentAnimation.playState') === 'running') {
+      this.pauseGroupEffect();
+    } else {
+      this.playGroupEffect();
+    }
+  },
   actions: {
     setupEffects(effect) {
       this.get('effects').addObject(effect);
