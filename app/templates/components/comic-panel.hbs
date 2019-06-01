@@ -1,0 +1,4 @@
+<span role="img" aria-label={{description}}></span>
+{{#each panel.layers as |layer|}}
+  {{component (concat "panel-layer-" layer.layerKind) layer=layer onSetup=(action "setupEffects")}}
+{{/each}}

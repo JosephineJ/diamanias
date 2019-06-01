@@ -1,0 +1,155 @@
+.comic-panel__layer {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center 0;
+  background-color: rgba(44,44,44,0.5);
+  background-size: 100% auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+
+
+  img {
+    object-fit: cover;
+    position: absolute;
+    left: -25%;
+    top: -25%;
+    opacity: 0.3;
+  }
+
+  &--brighten {
+    animation: brightenUp 5s 1;
+  }
+
+  @for $i from 1 through 12 {
+    &--f#{$i} {
+      background-size: auto (100% * $i);
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    font-size: $fs-medium;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .8s ease-in;
+    font-family: 'Bangers', cursive;
+
+    &:nth-of-type(1) {
+      transition-delay: .5s;
+    }
+
+    &:nth-of-type(2) {
+      transition-delay: 1s;
+    }
+
+    &:nth-of-type(3) {
+      transition-delay: 2s;
+    }
+
+    &:nth-of-type(4) {
+      transition-delay: 3s;
+    }
+
+    &:nth-of-type(5) {
+      transition-delay: 4s;
+    }
+
+    &.right {
+      justify-content: flex-end;
+      padding-right: 1em;
+    }
+
+    &.left {
+      justify-content: flex-start;
+      padding-left: 1em;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+
+    &.vcenter {
+      align-items: center;
+    }
+
+    &.bottom {
+      align-items: flex-end;
+      padding-bottom: 1em;
+    }
+
+    &.up {
+      align-items: flex-start;
+      padding-top: 1em;
+    }
+
+   &-small {
+     font-size: $fs-small;
+   }
+
+   &-large {
+     font-size: $fs-large;
+   }
+
+   &-bubble {
+     p {
+       background-color: #fff;
+       padding: 3.5em 1.5em;
+       border-radius: 55% 60% 50% 50% / 60% 60% 40% 40%;
+       border: 2px solid color('grey', '900');
+       color: color('grey', '900');
+       font-size: $fs-medium;
+       position: absolute;
+       font-family: Roboto, "Helvetica Neue", sans-serif;
+     }
+   }
+
+
+   &.ur {
+     p {
+       top: -.5em;
+       right: -.5em;
+     }
+   }
+
+   &.br {
+     p {
+       bottom: -.5em;
+       right: -.5em;
+     }
+   }
+
+   &.ul {
+     p {
+       top: -.5em;
+       left: -.5em;
+     }
+   }
+
+   &.bl {
+     p {
+       bottom: -.5em;
+       left: -.5em;
+     }
+   }
+
+    &.emotive {
+      p {
+        font-family: 'Bangers', cursive;
+        transform: skewX(10deg) rotate(-10deg) scale3d(1.5, 2.8, 0.9);
+        &::first-letter {
+          font-size: $fs-large;
+        }
+      }
+    }
+  }
+}
+
+@keyframes brightenUp {
+  0%   { filter: brightness(0.2) saturate(30%); }
+  100% { filter: brightness(1) saturate(100%); }
+}

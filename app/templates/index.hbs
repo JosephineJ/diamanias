@@ -1,0 +1,18 @@
+<section class="index__header hero-header">
+  <h1 class="text-white">Diamanias</h1>
+  <p class="text-light">accessible for screen reader users (beta)</p>
+  <p class="text-light">{{#link-to "a11y" title="Learn more about the screen reader beta"}}Learn more{{/link-to}}</p>
+</section>
+
+<section class="centered text-white">
+  <h2 class="text-white">An online comic built on open web standards and JavaScript. Powered by EmberJS</h2>
+  {{#paper-button href="./chapters/1" raised=true primary=true class="large"}}Read it{{/paper-button}}
+</section>
+
+<section class="centered">
+  <h2 class="text-white">Enjoy the comic</h2>
+  <p class="text-white">Make sure to enjoy the comic to the fullest extent by configuring your settings</p>
+  {{#paper-button href="./settings" raised=true primary=true class="large"}}Settings{{/paper-button}}
+</section>
+
+{{outlet}}

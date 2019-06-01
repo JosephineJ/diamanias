@@ -1,0 +1,21 @@
+<div class="container">
+  <section class="text-white">
+    <h1>Settings</h1>
+  </section>
+  <section class="text-white">
+    <h2>Animation Autoplay</h2>
+    <p>Do you want to view the comic using autoplay animations?</p>
+    <p>
+      <label for="anima-ap">Autoplay animations are {{currentAnimationSetting}}</label>
+      {{input type="checkbox" checked=autoAnimationsEnabled change=(action "toggleSettings" "autoAnimationsEnabled")  id="anima-ap" class="right"}}
+    </p>
+  </section>
+  <section class="text-white">
+    <h2>Color Contrast (feature in progress)</h2>
+    <p>
+      <label for="contrast-setter">High contrast color setting is {{currentColorSetting}}</label>
+      {{input type="checkbox" disabled=true checked=false change=(action "toggleSettings" "highContrastEnabled")  id="contast-setter" class="right"}}
+    </p>
+  </section>
+  {{outlet}}
+</div>

@@ -1,8 +1,48 @@
-<div class="wrapper">
-{{main-navigation}}
+{{#paper-sidenav
+  class="md-whiteframe-z2 main-nav"
+  name="left"
+  position="left"
+  open=leftSideBarOpen
+  lockedOpen=false
+  onToggle=(action "toggleMenu" leftSideBarOpen)}}
+  {{#paper-toolbar class="sidenav-header" as |toolbar|}}
+    {{#paper-toolbar-tools data-test-main-navigation-open=leftSideBarOpen}}{{/paper-toolbar-tools}}
+  {{/paper-toolbar}}
+  {{#paper-content padding=true}}
+    <nav class="nav-items" id="initial-focusee" tabindex="-1">
+      {{#each model as |chapter|}}
+        {{#link-to 'chapters.chapter' chapter.id class="nav-item" data-test-chapter=chapter.id}}{{chapter.name}}{{/link-to}}
+      {{/each}}
+      {{#link-to "settings" class="nav-item" data-test-nav-item="settings"}}Settings{{/link-to}}
+    </nav>
+  {{/paper-content}}
+{{/paper-sidenav}}
 
+{{#paper-toolbar class="main-toolbar transparent text-white"}}
+  {{#paper-toolbar-tools}}
+  {{#paper-sidenav-toggle name="left" as |toggleAction|}}
+    <PaperButton
+      @iconButton={{true}}
+      @onClick={{action toggleAction}}
+      role="button"
+      aria-label="Click here to enter main navigation"
+      data-test-home-menu={{true}}>
+      {{paper-icon "menu"}}
+    </PaperButton>
+  {{/paper-sidenav-toggle}}
+    <h2 class="text-white">
+      {{#link-to 'index'}}Diamanias{{/link-to}}
+    </h2>
+    <span class="flex"></span>
+  {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
 
-{{outlet}}
+<main>
+  {{outlet}}
+</main>
 
-{{main-footer}}
-</div>
+<footer class="md-default-theme text-white text-right">
+ <p class="text-white">(c) 2019 <a href="https://twitter.com/jjordan_dev" title="External Link to Jessica Jordan's Twitter Page">JJ</a></p>
+</footer>
+
+{{route-announcer}}

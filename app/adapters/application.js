@@ -1,5 +1,6 @@
 import DS from 'ember-data';
+import config from 'diamanias/config/environment';
 
-export default DS.RESTAdapter.extend({
-  namespace: 'api'
+export default DS.JSONAPIAdapter.extend({
+  host: config.API_HOST,
 });

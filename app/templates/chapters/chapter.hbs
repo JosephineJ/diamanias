@@ -1,0 +1,7 @@
+<h2 class="light chapter-title">{{model.chapter.name}}</h2>
+<section class="comic-strip">
+  {{#each model.panels as |panel|}}
+    {{comic-panel panel=panel}}
+  {{/each}}
+</section>
+{{outlet}}

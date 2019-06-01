@@ -1,0 +1,87 @@
+.comic-panel {
+  overflow: hidden;
+  border: 4px solid color($primary, '900');
+  position: relative;
+  display: inline-block;
+  min-height: 300px;
+
+  @media only screen
+  and (max-device-width: 600px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+     grid-column: span 3;
+  }
+
+  @media only screen
+  and (min-device-width: 601px)
+  and (max-device-width: 900px) {
+    grid-column: span 3;
+  }
+
+  &--large {
+    grid-column: span 2;
+    // height: 500px;
+    max-width: 900px;
+
+    @media only screen
+    and (max-device-width: 600px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+       grid-column: span 3;
+    }
+
+    .comic-panel__layer {
+      box-shadow: none;
+
+      @media only screen
+      and (min-width: 1400px) {
+        /* box-shadow: inset 0px 0px 20px 20px color('grey', '900'); /* change to alter the effect*/
+      }
+
+      @media only screen
+      and (min-width: 1500px) {
+      /*  box-shadow: inset 0px 0px 50px 50px color('grey', '900'); /* change to alter the effect*/
+      }
+    }
+  }
+
+  &--extra-large {
+    grid-column: span 3;
+    grid-row: span 2;
+    max-width: 1200px;
+
+    @media only screen
+    and (max-device-width: 600px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      grid-row: span 1;
+      width: 100%;
+    }
+
+    .comic-panel__layer {
+      box-shadow: none;
+
+      @media only screen
+      and (min-width: 1400px) {
+        /* box-shadow: inset 0px 0px 40px 40px color('grey', '900'); /* change to alter the effect*/
+      }
+
+      @media only screen
+      and (min-width: 1500px) {
+        /* box-shadow: inset 0px 0px 100px 100px color('grey', '900'); /* change to alter the effect*/
+      }
+    }
+  }
+
+  .number {
+    z-index: 10;
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: color($accent);
+  }
+}
+
+.comic-panel--active {
+  .comic-panel__layer--text {
+    opacity: 1;
+  }
+}

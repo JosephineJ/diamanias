@@ -1,26 +1,301 @@
-/* Basic CSS File */
-/* ----------------------- */
-/* ----------------------- */
+// Define desired color palettes.
+$primary: "indigo";
+$accent: "amber";
+$warn: "pink";
+$white: white;
+$dark: #212121;
 
-/* Reset CSS */
-@import 'partials/normalize';
+// If desired, import the palettes and modify to your liking.
+@import "color-palette";
+$color-teal: map-merge($color-teal, ('contrastDefaultColor':  $light-contrast-color));
+$color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $light-contrast-color));
 
-/*General SASS Mixins and global variables */
-@import 'partials/base';
+// Import the rest of ember-paper.
+@import "ember-paper";
 
-/*Theme variables */
-@import 'partials/dtheme';
+/* I. General */
+body {
+  background-color: color('grey', '900');
 
-/*Mixins and Keyframes for animations */
-@import 'partials/animations';
+  &.contrast {
+    background-color: color('indigo', '100');
+  }
+}
+
+html, body, * {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+md-toolbar.main-toolbar.md-default-theme {
+  background-color: color($primary, '900');
+}
+
+md-sidenav {
+  md-toolbar.md-default-theme.sidenav-header {
+    background-color: transparent;
+  }
+}
+
+.main-nav {
+  font-family: 'CaveStoryRegular';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.8em;
+  background-color: transparent;
+  box-shadow: none;
+
+  md-content {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .nav-items {
+    padding: 0;
+    margin: .5em 0;
+  }
+
+  .nav-item {
+    cursor: pointer;
+    margin: .5em 0;
+    color: contrastColor($primary, 'A200');
+    background: linear-gradient(0.4turn, color($primary, '900'), color($primary, '800'), rgba(48, 79, 254, 0.2));
+    opacity: .7;
+    transition: opacity .3s ease-in;
+    display: block;
+    padding: .5em 1em;
+    font-size: 1.2em;
+
+    &:hover {
+      background: linear-gradient(0.3turn, color($primary, '700'), color($primary, '800'), color('purple', '900'));
+      opacity: 1;
+    }
+
+    a {
+      display: block;
+      padding: .5em 1em;
+    }
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 2em auto;
+
+  @media only screen
+  and (max-device-width: 900px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100%;
+    margin: 1em auto;
+  }
+}
+
+.comic-strip {
+  display: grid;
+  grid-gap: 20px;
+  width: 100%;
+  grid-template-columns: 33% 34% 33%; // repeat(auto-fill, minmax(max-content));
+  grid-auto-rows: 300px;
+  align-content: space-around;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media only screen
+  and (max-device-width: 600px) {
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 0;
+    justify-content: space-between;
+  }
+
+  @media only screen
+  and (max-device-width: 400px) {
+    // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 0;
+    justify-content: space-between;
+    align-items: space-between;
+    grid-row-gap: 10px;
+  }
+
+  @media only screen
+  and (max-device-width: 900px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100%;
+    padding: 0;
+    grid-gap: 0;
+    grid-row-gap: 10px;
+  }
+}
+
+.light {
+  color: color($accent, '200');
+}
+
+@import 'vars';
+@import 'panels/panel';
+@import 'panels/layer';
 
 
+section {
+  padding: 4rem 2rem;
+}
 
-/* Main Elements */
-@import 'partials/containers';
+.hero-header {
+  height: 500px;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-color: color($primary, '900');
+  background-position: 0 0;
+  text-align: center;
+  padding: 4em;
+  margin: 0 auto;
+}
 
-/* Typography  */
-@import 'partials/typography';
+.index__header {
+  background-image: url('/assets/img/bubbles-sprite.png');
+  background-size: 50% auto;
+}
 
-/* Patterns */
-@import 'partials/patterns';
+h1, .h1-title {
+  font-size: $fs-xtra-large;
+}
+
+h2, .h2-title {
+  font-size: $fs-large;
+}
+
+h3, .h3-title {
+  font-size: $fs-medium-large;
+}
+
+h4, p, a, span, li {
+  font-size: $fs-medium;
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+  color: color('grey', '900');
+}
+
+.centered {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+p {
+  a {
+    font-weight: bold;
+  }
+}
+
+a {
+  &:hover {
+    text-decoration: line-through;
+  }
+}
+
+.text-white {
+  color: $white;
+
+  .contrast & {
+    color: color('grey', '900');
+  }
+
+  p, h1, h2, h3, span, a {
+    color: $white;
+
+    .contrast & {
+      color: color('grey', '900');
+    }
+  }
+}
+
+.text-light, .text-accent, .light p {
+  color: color($accent, '200');
+
+  .contrast & {
+    color: color('grey', '900');
+  }
+}
+
+.text-primary, .text-dark {
+  color: $dark;
+
+  .contrast & {
+    color: $white;
+  }
+}
+
+md-toolbar.main-toolbar.md-default-theme.transparent {
+  background-color: transparent;
+}
+
+.md-button.large {
+  padding: .5em 2em;
+  font-size: $fs-medium-small;
+  text-transform: none;
+}
+
+md-backdrop.md-opaque {
+  opacity: .88;
+}
+
+footer {
+  min-height: 56px;
+  padding: .5em 2em;;
+  background-color: color($primary, '900');
+  text-align: right;
+
+  .contrast & {
+    background-color: color('indigo', '300');
+  }
+}
+
+.chapter-title {
+  padding: .5rem 1rem;
+}
+
+.right {
+  float: right;
+}
+
+.ember-checkbox {
+  width: .8em;
+  height: .8em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance:none;
+  outline: 3px solid color($accent);
+  box-shadow: none;
+  font-size: 1em;
+  position: relative;
+
+  &:checked {
+    background-color: color($accent);
+    outline-color: color($accent);
+
+    &:after {
+      opacity: 1;
+      height: 2em;
+      width: 2em;
+      content: "\2713";
+      top: -3px;
+      left: 0;
+      position: absolute;
+    }
+  }
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar) md-icon, md-toolbar:not(.md-menu-toolbar) md-icon {
+  .contrast & {
+    color: color('grey', '900');
+    fill: color('grey', '900');
+  }
+}
